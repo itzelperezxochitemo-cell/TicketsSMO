@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1C7C84">
+  <meta name="description" content="Solicitudes de apoyo para el almacén: tickets con fotos que funcionan sin señal.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SMO">
+  <title>SMO · Portal de tickets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="util">
+    <span class="org">DHL Supply Chain · P&amp;G</span>
+    <button class="chip-red" id="chipRed" type="button" aria-live="polite" title="Estado de conexión y envíos pendientes">
+      <span class="punto"></span><span id="chipTexto">En línea</span><span class="n oculto" id="chipN">0</span>
+    </button>
+  </div>
+
+  <header class="top">
+    <div class="marca">Portal de tickets<small id="subtitulo"></small></div>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#/" data-ruta="inicio"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></span><span class="lbl">Tickets</span></a>
+      <a href="#/dashboard" data-ruta="dashboard"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 21v-8M11 21V4M16 21v-11"/></svg></span><span class="lbl">Indicadores</span></a>
+      <a href="#/nuevo" data-ruta="nuevo" class="nuevo" aria-label="Nuevo ticket"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="lbl">Nuevo ticket</span></a>
+      <a href="#/cola" data-ruta="cola"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4.5h-4.5"/></svg></span><span class="lbl">Envíos</span><span class="badge oculto" id="badgeCola">0</span></a>
+      <a href="#/mas" data-ruta="mas"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span><span class="lbl">Perfil</span></a>
+    </nav>
+
+    <div class="usuario" id="usuarioBarra">
+      <div class="quien"><div class="avatar" id="usuarioIni" aria-hidden="true"></div>
+        <div class="nom"><b id="usuarioNombre"></b><span id="usuarioRol"></span></div></div>
+      <button type="button" class="salir-ico" data-acc="cerrar-sesion" aria-label="Cerrar sesión" title="Cerrar sesión"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3M16 8l4 4-4 4M20 12H9"/></svg></button>
+    </div>
+  </header>
+
+  <div id="banda" class="banda-offline oculto" role="status"></div>
+
+  <main id="vista" tabindex="-1"></main>
+
+  <dialog id="dlg"></dialog>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/catalog.js"></script>
+  <script src="js/raci.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/tickets.js"></script>
+  <script src="js/server-local.js"></script>
+  <script src="js/server-supabase.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/view-lista.js"></script>
+  <script src="js/view-nuevo.js"></script>
+  <script src="js/view-extra.js"></script>
+  <script src="js/view-login.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
